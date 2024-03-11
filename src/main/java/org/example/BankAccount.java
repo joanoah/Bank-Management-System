@@ -57,6 +57,7 @@ public class BankAccount {
         if(amount <= balance){
             balance -= amount;
             System.out.println("Withdrawal of Ksh " + amount + " was successful. Current balance: Ksh " + balance);
+
         }else {
             System.out.println("Insufficient funds. Withdrawal failed.");
         }
