@@ -11,6 +11,7 @@ public class Bank {
         accounts = new HashMap<>();
     }
 
+
     //a method to add an account
     public void addAccount(String accountNumber, String accountHolderName, double balance, String accountType){
 

@@ -17,7 +17,6 @@ public class Main {
 
         do{
 
-
             System.out.println("\n1. Add Account");
             System.out.println("2. Deposit Funds");
             System.out.println("3. Withdraw Funds");
