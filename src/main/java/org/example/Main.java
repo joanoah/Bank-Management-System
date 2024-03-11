@@ -23,6 +23,7 @@ public class Main {
             System.out.println("5. Exit");
             System.out.println("Enter your choice: ");
 
+
             userChoice = scanner.nextInt();
             scanner.nextLine(); //consumes the newLine character
 

@@ -18,6 +18,7 @@ public class Bank {
 
         accounts.put(accountNumber, account);
         System.out.println("Account Created Successfully.");
+
     }
     //a method to get an account
     public BankAccount getAccount(String accountNumber){
