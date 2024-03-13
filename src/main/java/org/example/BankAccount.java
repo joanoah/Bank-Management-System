@@ -1,6 +1,5 @@
 package org.example;
 
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,6 @@ public class BankAccount {
     private double balance;
     private String accountType;
     private List<String> transactionHistory;
-
 
 
     public BankAccount (String accountNumber, String accountHolderName, double balance, String accountType) {
@@ -44,10 +42,7 @@ public class BankAccount {
         return transactionHistory;
     }
 
-
-
     //a method of depositing funds
-
     public void deposit(double amount){
         balance += amount;
         System.out.println("Deposit Successful. Current balance: " + balance);
@@ -62,7 +57,22 @@ public class BankAccount {
         }else {
             System.out.println("Insufficient funds. Withdrawal failed.");
         }
+    }
+    //a method to transfer funds from one account to another
+    public void transferFunds(BankAccount recipientBankAccount, double amountToTransfer){
+        if(amountToTransfer <= balance){
+            balance -= amountToTransfer;
+            recipientBankAccount.deposit(amountToTransfer);
 
+            //record transaction for the sender
+            recordTransaction("Transfer To Account " + recipientBankAccount.getAccountNumber() + ": Ksh" + amountToTransfer);
+
+            //record transaction for the recipient
+            recipientBankAccount.recordTransaction("Transfer From Account" + accountNumber + ": Ksh" + amountToTransfer );
+
+        }else{
+            System.out.println("Insufficient Funds. Transfer Failed!!!");
+        }
     }
 
     //a method to record transactions
